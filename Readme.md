@@ -8,7 +8,7 @@
 
 ## Live URL
 
-Have a look at 🚀 []() 🚀
+Have a look at 🚀 [https://abhishek-sanwal-far-away.netlify.app/](https://abhishek-sanwal-far-away.netlify.app/) 🚀
 
 ---
 
