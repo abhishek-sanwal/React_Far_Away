@@ -1,5 +1,5 @@
 import Item from "./Item";
-import { useItems } from "./ItemContext";
+import { useItems } from "../contexts/ItemContext";
 import { useState } from "react";
 
 export default function PackingList() {
