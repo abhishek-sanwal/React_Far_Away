@@ -1,9 +1,10 @@
+import { useItems } from "./ItemContext";
 import { useState } from "react";
 
-export default function Form({ onAddItem }) {
+export default function Form() {
+  const { handleAddItem } = useItems();
   const [description, setDescription] = useState("");
   const [quantity, setQuantity] = useState(1);
-
   function handleSubmit(event) {
     event.preventDefault();
     if (!description) return;
@@ -14,8 +15,7 @@ export default function Form({ onAddItem }) {
       packed: false,
       id: Date.now(),
     };
-
-    onAddItem(newItem);
+    handleAddItem(newItem);
     setDescription("");
     setQuantity(1);
   }
