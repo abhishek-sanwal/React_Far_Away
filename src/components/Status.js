@@ -1,10 +1,13 @@
-export default function Status({ items }) {
+import { useItems } from "./ItemContext";
+export default function Status() {
+  const { items } = useItems();
   const total = items.length;
   const totalPacked = items.filter((item) => item.packed).length;
   const percentage = Math.round((totalPacked / total) * 100);
 
   return (
     <footer className="stats">
+      {/* Footer Message conditionally rendered */}
       <em>
         {items.length === 0
           ? "Start adding some items to your packing list🚀🚀"
