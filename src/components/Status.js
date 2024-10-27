@@ -1,4 +1,4 @@
-import { useItems } from "./ItemContext";
+import { useItems } from "../contexts/ItemContext";
 export default function Status() {
   const { items } = useItems();
   const total = items.length;

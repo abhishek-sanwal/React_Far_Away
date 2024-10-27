@@ -1,5 +1,4 @@
-import { useItems } from "./ItemContext";
-
+import { useItems } from "../contexts/ItemContext";
 export default function Item({ item }) {
   console.log(item.description, "Inside item");
 

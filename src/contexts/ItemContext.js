@@ -41,20 +41,24 @@ function reducer(state, action) {
 function ItemProvider({ children }) {
   const [{ items }, dispatch] = useReducer(reducer, initialState);
 
-  <ItemsContext.Provider
-    value={{
-      items,
-      handleAddItem: (newItem) => dispatch({ type: "add", payload: newItem }),
-      handleRemoveItem: (id) => dispatch({ type: "remove", payload: id }),
-      handleClearItemList: () => {
-        const confirmed = window.confirm(
-          " Are you sure you want to delete entire list?"
-        );
-        if (confirmed) dispatch({ type: "clear" });
-      },
-      handleTogglePacked: (id) => dispatch({ type: "toggle", payload: id }),
-    }}
-  ></ItemsContext.Provider>;
+  return (
+    <ItemsContext.Provider
+      value={{
+        items,
+        handleAddItem: (newItem) => dispatch({ type: "add", payload: newItem }),
+        handleRemoveItem: (id) => dispatch({ type: "remove", payload: id }),
+        handleClearItemList: () => {
+          const confirmed = window.confirm(
+            " Are you sure you want to delete entire list?"
+          );
+          if (confirmed) dispatch({ type: "clear" });
+        },
+        handleTogglePacked: (id) => dispatch({ type: "toggle", payload: id }),
+      }}
+    >
+      {children}
+    </ItemsContext.Provider>
+  );
 }
 
 function useItems() {
